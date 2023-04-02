@@ -37,6 +37,9 @@ npx w3f test web3-functions/open-ai-nft/index.ts --show-logs --user-args=nftAddr
 yarn run deploy --network goerli
 ```
 
+```
+npx w3f deploy web3-functions/open-ai-nft/index.ts
+```
 ## Verify
 ```
 npx hardhat verify CONTRACT_ADDRESS DEDICATED_MSG_SENDER --network goerli

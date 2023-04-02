@@ -20,12 +20,12 @@ const NOT_REVEALED_URI = "ipfs://bafyreicwi7sbomz7lu5jozgeghclhptilbvvltpxt3hbpy
 function generateNftProperties(isNight: boolean) {
   const timeSelected = isNight ? "at night" : "at sunset";
 
-  const description = `A cute robot eating an icecream with Dubai background ${timeSelected} in a cyberpunk art, 3D, video game, and pastel salmon colors`;
+  const description = `A Swiss Landscape with a developer eating an icecream with a mountainous background ${timeSelected} in a cyberpunk art, 3D, video game, and pastel salmon colors`;
   return {
     description,
     attributes: [
       { trait_type: "Time", value: timeSelected },
-      { trait_type: "Place", value: "Eth Dubai" },
+      { trait_type: "Place", value: "Zurich" },
       { trait_type: "Eating", value: "Gelato" },
       { trait_type: "Powered", value: "Web 3 Functions" },
     ],

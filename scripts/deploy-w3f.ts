@@ -4,14 +4,12 @@ import { Web3FunctionBuilder } from "@gelatonetwork/web3-functions-sdk/builder";
 
 async function main() {
   const chainId = hre.network.config.chainId as number;
- 
 
   // Deploy Web3Function on IPFS
   console.log("Deploying Web3Function on IPFS...");
   const web3Function = "./web3-functions/open-ai-nft/index.ts";
   const cid = await Web3FunctionBuilder.deploy(web3Function);
   console.log(`Web3Function IPFS CID: ${cid}`);
-
 }
 
 main()

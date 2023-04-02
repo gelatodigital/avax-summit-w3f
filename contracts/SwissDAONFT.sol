@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
-contract EthDubaiGelatoBotNft is ERC721URIStorage, Ownable, Pausable  {
+contract SwissDAONFT is ERC721URIStorage, Ownable, Pausable  {
     using Counters for Counters.Counter;
     Counters.Counter public tokenIds;
     address public immutable gelatoMsgSender;
@@ -17,7 +17,7 @@ contract EthDubaiGelatoBotNft is ERC721URIStorage, Ownable, Pausable  {
     event MetadataUpdate(uint256 _tokenId);
     event MintEvent(uint256 _tokenId);
 
-    constructor(address _gelatoMsgSender) ERC721("ETH Dubai Gelato Bots", "DUB-GEL-BOT") {
+    constructor(address _gelatoMsgSender) ERC721("SwissDAOxGelato", "SWISS-DAO-GEL") {
         gelatoMsgSender = _gelatoMsgSender;
     }
 

@@ -4,9 +4,9 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-etherscan";
-import { resolve} from 'path';
-import * as glob from 'glob';
-require('hardhat-contract-sizer');
+import { resolve } from "path";
+import * as glob from "glob";
+require("hardhat-contract-sizer");
 
 // Process Env Variables
 import * as dotenv from "dotenv";
@@ -17,7 +17,7 @@ const ALCHEMY_ID = process.env.ALCHEMY_ID;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY;
 
-glob.sync('./tasks/**/*.ts').forEach(function (file: any) {
+glob.sync("./tasks/**/*.ts").forEach(function (file: any) {
   require(resolve(file));
 });
 
@@ -34,14 +34,12 @@ const config: HardhatUserConfig = {
     hardhat: {
       allowUnlimitedContractSize: true,
       forking: {
-        url: `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_ID}`
-       // blockNumber: 7704180
-       
-      
+        url: `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_ID}`,
+        // blockNumber: 7704180
       },
     },
     localhost: {
-      url: 'http://localhost:8545',
+      url: "http://localhost:8545",
       chainId: 31337,
     },
     goerli: {
@@ -50,14 +48,11 @@ const config: HardhatUserConfig = {
       url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_ID}`,
     },
     matic: {
-      url: 'https://polygon-rpc.com', //'https://polygon-mainnet.g.alchemy.com/v2/r6kvmGCX5T_vMG1vdQhuXBtHaOuZECdX',
-  
+      url: "https://polygon-rpc.com", //'https://polygon-mainnet.g.alchemy.com/v2/r6kvmGCX5T_vMG1vdQhuXBtHaOuZECdX',
+
       //https://polygon-rpc.com 0x5dcde0c1be6cdfacba8866e56182e66221c6eaf3f6a421bc58b6939d84e57b7b
       gasPrice: 1000000000,
-          accounts:
-        process.env['PRIVATE_KEY'] !== undefined
-          ? [process.env['PRIVATE_KEY']]
-          : [],
+      accounts: process.env["PRIVATE_KEY"] !== undefined ? [process.env["PRIVATE_KEY"]] : [],
     },
     polygon: {
       chainId: 137,
@@ -65,9 +60,9 @@ const config: HardhatUserConfig = {
       url: `https://polygon-mainnet.g.alchemy.com/v2/HF4Mmimsk9XWO446jjrFyt2xEzXier-f`,
     },
     mumbai: {
-      url:`https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_ID}`,
- 
-      chainId:80001,
+      url: `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_ID}`,
+
+      chainId: 80001,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
     },
   },
