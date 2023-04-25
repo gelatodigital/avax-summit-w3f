@@ -19,12 +19,10 @@ async function main() {
    let nonce = await signer.getTransactionCount();
 
   // Deploying NFT contract
-  const nftFactory = await hre.ethers.getContractFactory("EthZurichGelatoBotNft",signer);
+  const nftFactory = await hre.ethers.getContractFactory("AVAXSummitGelatoBotNft",signer);
   console.log("Deploying GelatoBotNft...");
   const gelatoBotNft = await nftFactory.deploy(dedicatedMsgSender.address,{  
-    nonce,
-    gasPrice:190000000000,
-    gasLimit:10000000});
+    nonce:0});
   await gelatoBotNft.deployed();
 
 

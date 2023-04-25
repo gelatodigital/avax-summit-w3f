@@ -21,12 +21,12 @@ const NOT_REVEALED_URI = "ipfs://bafyreicwi7sbomz7lu5jozgeghclhptilbvvltpxt3hbpy
 function generateNftProperties(isNight: boolean) {
   const timeSelected = isNight ? "at night" : "at sunset";
 
-  const description = `A cute robot eating an icecream with Zurich background ${timeSelected} in a cyberpunk art, 3D, video game, and pastel salmon colors`;
+  const description = `A cute robot eating an icecream with Barcelona background ${timeSelected} in a cyberpunk art, 3D, video game, and pastel salmon colors`;
   return {
     description,
     attributes: [
       { trait_type: "Time", value: timeSelected },
-      { trait_type: "Place", value: "Eth Zurich" },
+      { trait_type: "Place", value: "AVAX Summit Barcelona" },
       { trait_type: "Eating", value: "Gelato" },
       { trait_type: "Powered", value: "Web 3 Functions" },
     ],
@@ -107,11 +107,11 @@ Web3Function.onRun(async (context: Web3FunctionContext) => {
       const imageBlob = (await axios.get(imageUrl, { responseType: "blob" })).data;
       const imageFile = new File([imageBlob], `gelato_bot_${tokenId}.png`, { type: "image/png" });
       const metadata = await nftStorage.store({
-        name: `Eth Zurich GelatoBot #${tokenId}`,
+        name: `AVAX Summit GelatoBot #${tokenId}`,
         description: nftProps.description,
         image: imageFile,
         attributes: nftProps.attributes,
-        collection: { name: "EthZurich-GelatoBots", family: "ethzurich-gelatobots" },
+        collection: { name: "AVAX-Summit-GelatoBots", family: "avaxsummit-gelatobots" },
       });
       console.log(`#${tokenId} IPFS Metadata ${metadata.url}`);
 

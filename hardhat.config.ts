@@ -22,9 +22,10 @@ glob.sync('./tasks/**/*.ts').forEach(function (file: any) {
 });
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "matic",
+  defaultNetwork: "avax",
   etherscan: {
-    apiKey: {
+    apiKey: 
+    {
       goerli: ETHERSCAN_API_KEY ?? "",
       polygon: POLYGONSCAN_API_KEY ?? "",
       polygonMumbai: POLYGONSCAN_API_KEY ?? "",
@@ -50,9 +51,7 @@ const config: HardhatUserConfig = {
       url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_ID}`,
     },
     matic: {
-      url: 'https://polygon-rpc.com', //'https://polygon-mainnet.g.alchemy.com/v2/r6kvmGCX5T_vMG1vdQhuXBtHaOuZECdX',
-  
-      //https://polygon-rpc.com 0x5dcde0c1be6cdfacba8866e56182e66221c6eaf3f6a421bc58b6939d84e57b7b
+      url: 'https://polygon-rpc.com',
       gasPrice: 1000000000,
           accounts:
         process.env['PRIVATE_KEY'] !== undefined
@@ -62,7 +61,12 @@ const config: HardhatUserConfig = {
     polygon: {
       chainId: 137,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
-      url: `https://polygon-mainnet.g.alchemy.com/v2/HF4Mmimsk9XWO446jjrFyt2xEzXier-f`,
+      url: `https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_ID}`,
+    },
+    avax: {
+      chainId: 43114,
+      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
+      url: `https://api.avax.network/ext/bc/C/rpc`,
     },
     mumbai: {
       url:`https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_ID}`,

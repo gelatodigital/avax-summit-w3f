@@ -7,7 +7,7 @@ import { join } from 'path';
 task('etherscan-verify', 'verify').setAction(async ({}, hre) => {
 
   await hre.run('verify:verify', {
-    address: "0x5041c60C75633F29DEb2AED79cB0A9ed79202415",
-    constructorArguments: ["0xbB97656cd5fECe3a643335d03C8919D5E7DcD225"],
+    address: "0x5B91C8E7a2DEABC623E6Ab34E8c26F27Cc18bC66",
+    constructorArguments: ["0xc22b93F15c703D9f6C9A4F0aF1Af237b84F97d88"],
   });
 });
